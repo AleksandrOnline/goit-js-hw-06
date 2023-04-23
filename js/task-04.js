@@ -1,12 +1,17 @@
-const counterValue = 0;
-const valueEl = document.querySelector('#value');
-const incrementBtn = document.querySelector('[data-action="increment"]');
+let counterValue = 0;
+const valueEl = document.getElementById('value');
 const decrementBtn = document.querySelector('[data-action="decrement"]');
+const incrementBtn = document.querySelector('[data-action="increment"]');
 
-incrementBtn.addEventListener('click', () => {
-  valueEl.textContent = counterValue + 1;
-});
+decrementBtn.addEventListener('click', decrement);
+incrementBtn.addEventListener('click', increment);
 
-decrementBtn.addEventListener('click', () => {
-  valueEl.textContent = counterValue - 1;
-});
+function decrement() {
+  counterValue--;
+  valueEl.textContent = counterValue;
+}
+
+function increment() {
+  counterValue++;
+  valueEl.textContent = counterValue;
+}
